@@ -1,6 +1,4 @@
-// Exercici 3 EAC3: Generador de perfils d'enquestes de vots
 
-// Definició de la classe Votant: codi a omplir per l'alumne
 // Classe filla Estudiant que hereta de Votant: codi a omplir per l'alumne
 // Classe filla Treballador que hereta de Votant: codi a omplir per l'alumne
 // Classe filla Jubilat que hereta de Votant: codi a omplir per l'alumne
@@ -88,16 +86,6 @@ class Jubilat extends Votant {
 
 }
 
-
-// Classe Simulador que permet crear una estructura amb 1000 votants
-/*****
-* Certa part del codi ja està subministrat pel professorat
-* - Array de noms
-* - Array de cognoms
-* - Array de partits
-* - Array de perfils
-* - Array de centres educatius
-*/
 class Simulador {
   #noms = ["Sofía", "Martín", "Valentina", "Mateo", "Lucía", "Matías", "Valeria", "Sebastián", "María", "Nicolás", "Emma", "Joaquín", "Isabella", "Juan", "Mía", "Diego", "Camila", "Emilia", "Felipe", "Renata", "Carlos", "Victoria", "Pedro", "Julia", "Manuel", "Alejandra", "Javier", "Sara", "Adrián", "Elena", "Miguel", "Aitana", "Francisco", "Claudia", "Daniel", "Laura", "Alejandro", "Carmen", "Leo", "Ana", "Pablo", "Alicia", "José", "Lola", "David", "Natalia", "Álvaro", "Jimena", "Fernando", "Adriana", "Rafael", "Rocío", "Hugo", "Inés", "Mario", "Pilar", "Iker", "Diana", "Andrés", "Eva", "Iván", "Beatriz", "Jorge", "Alba", "Rubén", "Teresa", "Óscar", "Celia", "Gonzalo", "Silvia", "Santiago", "Miranda", "Enrique", "Abril", "Bruno", "Marta", "Raul", "Rosa", "Víctor", "Luna", "Marcos", "Ángela", "Sergio", "Luisa", "Antonio", "Esther", "Ángel", "Clara", "Ignacio", "Elisa"];
   #cognoms = ["García", "Fernández", "González", "Rodríguez", "López", "Martínez", "Sánchez", "Pérez", "Martín", "Gómez", "Ruiz", "Hernández", "Jiménez", "Díaz", "Moreno", "Álvarez", "Muñoz", "Romero", "Alonso", "Gutiérrez", "Navarro", "Torres", "Domínguez", "Vázquez", "Ramos", "Gil", "Ramírez", "Serrano", "Blanco", "Molina", "Morales", "Ortega", "Delgado", "Castro", "Ortiz", "Rubio", "Marín", "Sanz", "Iglesias", "Núñez", "Medina", "Garrido", "Cortés", "Castillo", "Santos", "Lozano", "Guerrero", "Cano", "Prieto", "Méndez", "Cruz", "Calvo", "Herrera", "Gallego", "Vidal", "León", "Marquez", "Peña", "Herrero", "Flores", "Cabrera", "Campos", "Vega", "Fuentes", "Carrasco", "Diez", "Reyes", "Caballero", "Nieto", "Aguilar", "Pascual", "Santana", "Herrero", "Montero", "Esteban", "Parra", "Bravo", "Giménez", "Rojas", "Lara", "Rivas", "Estrada", "Vila", "Mora", "Soler", "Gallardo", "Pardo"];
@@ -119,7 +107,7 @@ class Simulador {
   }
 
   resumPartits() {
-    // Variable amb dades setejades a tall d'exemple. Cal que l'alumne generi aquestes dades en funció dels votants generats
+    
     let vots = {
       EH_Bildu: 95,
       ERC: 99,
@@ -138,9 +126,7 @@ class Simulador {
   }
 
   resumPerfils() {
-    // Variable amb dades setejades a tall d'exemple. Cal que l'alumne generi aquestes dades en funció dels votants generats
-    // Fixa't que les dades dels partits tenen el mateix ordre en cada perfil. L'ordre pot ser el que vulguis, però ha de ser
-    // el mateix en cada perfil si vols que ChartJS representi bé les dades.
+
     let perfils = {
       Jubilat: {
         BNG: 12,
@@ -189,9 +175,7 @@ class Simulador {
     return perfils;
   }
 
-  /***
-  * Mètode privat a implementar per l'alumne
-  */
+
   #generateRandomVotant() {
 
     const index = Math.floor(Math.random() * this.#perfils.length);
@@ -215,8 +199,7 @@ class Simulador {
         break;
 
       case "Treballador":
-        //const empresaInd = Math.floor(Math.random() * this.#centres.length);
-        //const empresa = this.#centres[empresaInd];
+       
         additionalInfo = `Empresari/a ${nom}`;
         break;
 
