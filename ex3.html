@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="ex3.js"></script>
+    <style>
+        body {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+    </style>
+    <title>Ex3</title>
+</head>
+
+<body>
+    <h1>Vots totals a cada partit</h1>
+    <div style="width: 800px;"><canvas id="grafic1"></canvas></div>
+    <h1>Vots desglossats per perfils</h1>
+    <div style="width: 800px;"><canvas id="grafic2"></canvas></div>
+
+    <script>
+        let s = new Simulador();
+        console.table(s.votants);
+        const info1 = s.resumPartits();
+        const info2 = s.resumPerfils();
+
+        new Chart(
+            document.getElementById('grafic1'),
+            {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(info1),
+                    datasets: [{
+                        data: Object.values(info1)
+                    }]
+                }
+            }
+        );
+
+        new Chart(
+            document.getElementById('grafic2'),
+            {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(info2.Estudiant),
+                    datasets: [
+                        {
+                            data: Object.values(info2.Estudiant),
+                            label: 'Estudiant'
+                        },
+                        {
+                            data: Object.values(info2.Treballador),
+                            label: 'Treballador'
+                        },
+                        {
+                            data: Object.values(info2.Jubilat),
+                            label: 'Jubilat'
+                        }
+                    ],
+
+                }
+            }
+        );
+    </script>
+</body>
+
+</html>
