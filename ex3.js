@@ -1,7 +1,4 @@
 
-// Classe filla Estudiant que hereta de Votant: codi a omplir per l'alumne
-// Classe filla Treballador que hereta de Votant: codi a omplir per l'alumne
-// Classe filla Jubilat que hereta de Votant: codi a omplir per l'alumne
 class Votant {
   #nom;
   #edat;
